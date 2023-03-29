@@ -1,4 +1,4 @@
-#include "main.h"
+#include "../main.h"
 #include <stdio.h>
 
 int main(void)
@@ -9,8 +9,8 @@ int main(void)
 	string1 = "Awesome";
 	f = 'I';
 
-	_printf("%c am 100% %s", f, string1);
-	printf("%c am 100% %s", f, string1);
+	_printf("%c am 100% %s\n", f, string1);
+	printf("%c am 100%% %s\n", f, string1);
 
 	return (0);
 }
