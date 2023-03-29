@@ -2,7 +2,7 @@
 
 /**
  * handle_print - prints an arguement based on the type of data it is
- * @format: formatted string containing arguemnt
+ * @fmt: formatted string containing arguemnt
  * @ap: list of arguments to be printed
  * @ind: index
  * @buffer: the array to handle print
@@ -12,7 +12,7 @@
  * @size: specifies size
  * Return: either 1 or 2;
  */
-int handle_print(const char *format, int *ind, va_list ap, char buffer[],
+int handle_print(const char *fmt, int *ind, va_list ap, char buffer[],
 		int flags, int width, int precision, int size)
 {
 	int i, unknown_length = 0, char_printed = 0;
@@ -26,7 +26,7 @@ int handle_print(const char *format, int *ind, va_list ap, char buffer[],
 	for (i = 0; fmt_types[i].fmt != '\0'; i++)
 	{
 		if (fmt[*ind] == fmt_types[i].fmt)
-			return (fmt_types[i].func(list, buffer, flags, width,
+			return (fmt_types[i].func(ap, buffer, flags, width,
 						precision, size));
 	}
 
